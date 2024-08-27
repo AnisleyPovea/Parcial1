@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar style="--background: #a1bef5;">
+    <ion-buttons slot="end">
+      <ion-button color="dark" class="custom-button" [routerLink]="['/shopping-cart',]">
+        <ion-icon slot="icon-only" name="cart" class="custom-icon"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-title>MY FAKE STORE</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+
+<ion-content [fullscreen]="true">
+  
+  <ion-list>
+    <ion-item lines="full">
+      <ion-select label="Categories" placeholder="Category" [(ngModel)]="selectedCategory" (ionChange)="filterProductsByCategory()">
+        <ion-select-option *ngFor="let category of categories" [value]="category">{{category}}</ion-select-option>
+      </ion-select>
+    </ion-item>
+    <ion-grid>
+      <ion-row>
+        <ion-col size="6" size-md="4" size-lg="3" *ngFor="let product of filteredProducts">
+    <app-card
+      [title]="product.title"
+      [category]="product.category"
+      [image]="product.image"
+      [price]="product.price"
+      [rating]="product.rating"
+      [id]="product.id">
+    </app-card>
+  </ion-col>
+  </ion-row>
+  </ion-grid>
+  </ion-list>
+  
+</ion-content>

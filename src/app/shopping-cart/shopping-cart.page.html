@@ -1,0 +1,25 @@
+
+  <ion-toolbar padding style="--background: #a1bef5;">
+    <ion-buttons slot="start">
+      <ion-back-button color="dark" defaultHref="/home"></ion-back-button>
+    </ion-buttons>
+    <ion-title>Shopping cart</ion-title>
+  </ion-toolbar>
+
+<ion-content [fullscreen]="true">
+
+  <ion-list lines="full">
+    <ion-item *ngFor="let product of products" class="cart-item">
+      <img [src]="product.image" alt="{{ product.image }}" class="product-image" width="25%">
+      <br><ion-label class="product-title">{{ product.title }}</ion-label>
+      <h4 slot="end">{{ product.price | currency }}</h4>
+      <ion-button fill="clear" color="danger" slot="end" (click)="removeFromCart(product)">
+          <ion-icon color="danger" slot="icon-only" name="trash"></ion-icon>
+      </ion-button>
+    </ion-item>
+  </ion-list>
+  <div class="total-amount-container">
+    <h2>{{ formattedTotalAmount }}</h2>
+  </div>
+  <ion-button color="secondary" expand="full" (click)="simulatePayment()">Payment</ion-button>
+</ion-content>

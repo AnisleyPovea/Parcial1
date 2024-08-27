@@ -1,0 +1,28 @@
+.cart-item {
+    display: flex;
+    align-items: center;
+    .product-image {
+      margin-right: 10px; 
+    }
+  
+    .product-title {
+      margin-left: 15px; 
+    }
+  }
+  
+  ion-item {
+    --border-radius: 4px; 
+    --background: #fff; 
+    --border-color: #ccc; 
+    border: 1px solid var(--border-color); 
+    height: 20%;
+    
+  }
+
+  .total-amount-container {
+    text-align: right;
+    margin: 16px; 
+  }
+  
+  
+  

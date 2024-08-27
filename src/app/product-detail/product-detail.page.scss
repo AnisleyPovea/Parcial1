@@ -1,0 +1,31 @@
+.product-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .star-icon {
+    color: rgba(255, 230, 0, 0.829); 
+    font-size: 2rem; 
+  }
+
+  .justify-text{
+    text-align: justify;
+  }
+
+  .custom-button {
+    display: flex;
+    align-items: center; 
+    justify-content: center; 
+  }
+  
+  .custom-icon {
+    margin-left: 8px; 
+    font-size: 24px; 
+  }
+  
+  

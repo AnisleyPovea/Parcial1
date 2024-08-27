@@ -1,0 +1,18 @@
+
+<ion-card class="custom-card" [routerLink]="['/product-detail', id]">
+  <ion-card-header>
+    <p><strong>{{ title }}</strong></p>
+  </ion-card-header>
+  <ion-card-content>
+    <img [src]="image" class="card-image">
+    <br><br>
+    <div class="rating">
+      <ng-container *ngFor="let star of getStarArray(rating.rate)">
+        <ion-icon [name]="star ? 'star' : 'star-outline'" class="star-icon"></ion-icon>
+      </ng-container>
+      {{ rating.rate }}
+    </div>
+    <h1>{{ price | currency }}</h1>
+  </ion-card-content>
+</ion-card>
+

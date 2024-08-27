@@ -1,0 +1,26 @@
+
+
+.custom-card {
+  max-width: auto; 
+  height: auto; 
+  margin: 10px;
+  
+  }
+  
+  .card-image {
+    width: 98%;
+    height: 47%;
+    
+  }
+  
+  .rating {
+    display: flex;
+    align-items: center;
+  }
+  
+  .star-icon {
+    color: rgba(255, 230, 0, 0.829); 
+    font-size: 24px; 
+    margin-right: 2px; 
+  }
+  
