@@ -48,9 +48,13 @@ export class HttpService {
   }
 
   removeProductFromCart(product: Product): void {
-    this.cart = this.cart.filter(p => p !== product);
-    this.cartItemsSubject.next(this.cart);
+    const index = this.cart.findIndex(p => p.id === product.id);
+    if (index !== -1) {
+      this.cart.splice(index, 1);  
+      this.cartItemsSubject.next(this.cart);
+    }
   }
+  
 
   getTotalAmount(): number {
     return this.cart.reduce((total, product) => total + product.price, 0);
